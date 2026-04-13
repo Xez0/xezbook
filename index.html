@@ -464,9 +464,9 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
                     const thumbnail = data.video_info?.thumbnail || '';
 
                     previewContainer.innerHTML = `
-                        <video controls poster="${thumbnail}" class="w-full h-full object-contain">
-                            <source src="${previewUrl}" type="video/mp4">
-                        </video>`;
+    <video controls controlsList="nodownload" oncontextmenu="return false;" poster="${thumbnail}" class="w-full h-full object-contain">
+        <source src="${previewUrl}" type="video/mp4">
+    </video>`;
 
                     searchView.classList.add('hidden');
                     searchView.classList.remove('flex');
