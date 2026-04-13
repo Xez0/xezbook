@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>The Fluid Utility | Premium Video Downloader</title>
     
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co.com/xpW0FHH/Columbina.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;700;800&display=swap" rel="stylesheet"/>
@@ -100,8 +102,10 @@
         <section class="w-full mb-8">
             <div class="bg-surface-container-lowest rounded-2xl editorial-shadow overflow-hidden border border-outline-variant/20">
                 
-                <div id="media-preview-container" class="relative w-full bg-black flex justify-center items-center border-b border-outline-variant/20">
-                    </div>
+                <div class="w-full bg-[#050505] flex justify-center border-b border-outline-variant/20">
+                    <div id="media-preview-container" class="relative w-full max-w-[360px] aspect-[9/16] bg-black flex justify-center items-center overflow-hidden">
+                        </div>
+                </div>
 
                 <div class="p-4 md:p-6">
                     <div class="bg-surface-container-low rounded-2xl p-5 border border-outline-variant/30">
@@ -280,12 +284,12 @@
                         qualityContainer.insertAdjacentHTML('beforeend', html);
                     });
 
-                    // Render Preview Video
+                    // Render Preview Video (9:16 fit)
                     let previewUrl = data.download_url || (data.available_formats?.length > 0 ? data.available_formats[data.available_formats.length - 1].url : '');
                     const thumbnail = data.video_info?.thumbnail || '';
 
                     previewContainer.innerHTML = `
-                        <video controls poster="${thumbnail}" class="w-full h-auto max-h-[75vh] object-contain">
+                        <video controls poster="${thumbnail}" class="w-full h-full object-contain">
                             <source src="${previewUrl}" type="video/mp4">
                         </video>`;
 
