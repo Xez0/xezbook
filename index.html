@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XezBook | Premium Facebook Downloader</title>
+    <title>XezBook | Facebook Downloader</title>
 
     <meta name="description" content="Unduh Video Facebook dengan kualitas HD secara gratis melalui XezBook.">
     <meta property="og:title" content="XezBook - Facebook Video Downloader">
@@ -193,11 +193,12 @@
                 <span data-i18n="btnBackText">Fetch Another Link</span>
             </button>
             <div class="h-px w-12 bg-outline-variant/30"></div>
-            <p class="font-label text-xs text-outline tracking-widest uppercase text-center px-4">XezBook • Isuru API</p>
-        </footer>
+<p class="font-label text-xs text-outline tracking-widest uppercase text-center px-4">XezBook • <span id="current-year"></span></p>        </footer>
     </main>
 
     <script>
+        // Mengatur tahun berjalan secara dinamis
+document.getElementById('current-year').textContent = new Date().getFullYear();
         // --- AWAL SCRIPT CLEAN CONSOLE ---
         const originalLog = console.log;
         
